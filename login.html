@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+
+    <style>
+        body{
+            font-family:Arial,sans-serif;
+            background:#f0f4f8;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        }
+
+        .login{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 0 15px rgba(0,0,0,0.2);
+            width:300px;
+            text-align:center;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px 0;
+            font-size:16px;
+            border-radius:8px;
+            border:1px solid #ccc;
+        }
+
+        button{
+            button{
+    padding:10px;
+    margin:5px;
+    background:#0066cc;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+        }
+
+        button:hover{
+            background:#004c99;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login">
+
+<h2>🔐 Login</h2>
+
+<input type="text" id="username" placeholder="Username">
+
+<input type="password" id="password" placeholder="Password">
+
+<button type="button" onclick="togglePassword()">👁 Show Password</button>
+
+<button onclick="login()">Login</button>
+
+<p id="message"></p>
+
+</div>
+
+  <script>
+
+function togglePassword(){
+
+    let password = document.getElementById("password");
+
+    if(password.type === "password"){
+        password.type = "text";
+    }else{
+        password.type = "password";
+    }
+
+}
+
+function login(){
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if(username === "euqiperaidam" && password === "elal0310181998!"){
+        document.getElementById("message").innerHTML = "✅ Login Successful!";
+        document.getElementById("message").style.color = "green";
+    }else{
+        document.getElementById("message").innerHTML = "❌ Invalid Username or Password!";
+        document.getElementById("message").style.color = "red";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
