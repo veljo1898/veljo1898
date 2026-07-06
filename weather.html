@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+
+    <style>
+        body{
+            font-family:Arial,sans-serif;
+            background:#87CEEB;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        }
+
+        .weather{
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            width:320px;
+            text-align:center;
+            box-shadow:0 0 15px gray;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px 0;
+            border-radius:8px;
+            border:1px solid #ccc;
+            font-size:16px;
+        }
+
+        button{
+            padding:10px 20px;
+            background:#0066cc;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        #weatherResult{
+            margin-top:20px;
+            font-size:18px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="weather">
+
+<h2>🌤 Weather App</h2>
+
+<input type="text" id="city" placeholder="Enter City">
+
+<button onclick="checkWeather()">Check Weather</button>
+
+<p id="weatherResult"></p>
+
+</div>
+
+<script>
+
+function checkWeather(){
+
+    let city = document.getElementById("city").value.toLowerCase();
+
+    if(city === "manila"){
+        document.getElementById("weatherResult").innerHTML =
+        "☀️ Manila: Sunny, 32°C";
+    }
+    else if(city === "laguna"){
+        document.getElementById("weatherResult").innerHTML =
+        "🌧 Laguna: Rainy, 28°C";
+    }
+    else if(city === "cebu"){
+        document.getElementById("weatherResult").innerHTML =
+        "⛅ Cebu: Cloudy, 30°C";
+    }
+   else if(city === "makati"){
+        document.getElementById("weatherResult").innerHTML =
+        "⛅ Cebu: Cloudy, 32°C";
+    }
+    else{
+        document.getElementById("weatherResult").innerHTML =
+        "❓ City not found.";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
