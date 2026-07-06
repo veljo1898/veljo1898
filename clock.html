@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Digital Clock</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#0d1b2a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.clock{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 15px gray;
+}
+
+h1{
+    color:#0066cc;
+}
+
+#time{
+    font-size:40px;
+    font-weight:bold;
+    color:#0d1b2a;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="clock">
+    <h1>🕒 Digital Clock</h1>
+    <p id="time"></p>
+</div>
+
+<script>
+
+function showTime(){
+
+    let now = new Date();
+
+    let time = now.toLocaleTimeString();
+
+    document.getElementById("time").innerHTML = time;
+
+}
+
+setInterval(showTime,1000);
+
+showTime();
+
+</script>
+
+</body>
+</html>
